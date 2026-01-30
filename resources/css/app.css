@@ -1,0 +1,349 @@
+@import '@fontsource/inter/300.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/playfair-display/400.css';
+@import '@fontsource/playfair-display/700.css';
+@import '@fontsource/playfair-display/400-italic.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Base Styles */
+@layer base {
+    body {
+        @apply font-sans bg-black text-white antialiased;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-serif;
+    }
+
+    ::selection {
+        @apply bg-golden text-black;
+    }
+
+    /* Smooth Scrolling */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply bg-black;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-golden/30 hover:bg-golden/50;
+        border-radius: 5px;
+    }
+}
+
+/* Custom Component Classes */
+@layer components {
+
+    /* Golden Text */
+    .golden-text {
+        @apply text-golden;
+    }
+
+    /* Golden Background */
+    .golden-bg {
+        @apply bg-golden;
+    }
+
+    /* Golden Border */
+    .golden-border {
+        @apply border-golden;
+    }
+
+    /* Accent Text */
+    .accent-text {
+        @apply text-accent;
+    }
+
+    /* Dark Blue Background */
+    .bg-dark-blue {
+        @apply bg-[#1E232B];
+    }
+
+    /* Hover Lift Effect */
+    .hover-lift {
+        @apply transition-all duration-300 ease-in-out;
+    }
+
+    .hover-lift:hover {
+        @apply -translate-y-2 shadow-2xl;
+    }
+
+    /* Button Styles */
+    .btn-primary {
+        @apply px-10 py-4 bg-golden text-black font-bold tracking-widest uppercase hover:bg-white transition-all duration-500 shadow-xl;
+    }
+
+    .btn-secondary {
+        @apply px-10 py-4 border border-white text-white font-bold tracking-widest uppercase hover:bg-white hover:text-black transition-all duration-500;
+    }
+
+    .btn-outline {
+        @apply px-8 py-3 border border-golden text-golden text-xs tracking-[0.2em] font-bold uppercase hover:bg-golden hover:text-black transition-all;
+    }
+
+    /* Form Input Styles */
+    .form-input {
+        @apply w-full bg-dark-blue border border-[#ACBAC4]/20 p-4 focus:outline-none focus:border-golden transition-colors text-white;
+    }
+
+    .form-input-small {
+        @apply w-full bg-dark-blue border border-[#ACBAC4]/20 p-3 focus:outline-none focus:border-golden transition-colors text-white;
+    }
+
+    .form-label {
+        @apply block text-xs uppercase tracking-widest text-accent mb-2;
+    }
+
+    /* Card Styles */
+    .card {
+        @apply bg-black/50 border border-golden/10 p-8 hover-lift hover:border-golden/40 transition-all duration-500;
+    }
+
+    /* Section Title */
+    .section-title {
+        @apply text-4xl md:text-5xl font-serif mb-4;
+    }
+
+    .section-subtitle {
+        @apply text-golden uppercase tracking-widest text-sm mb-4;
+    }
+
+    .section-divider {
+        @apply w-24 h-1 bg-golden mx-auto;
+    }
+
+    /* Navigation Link */
+    .nav-link {
+        @apply hover:text-golden transition-colors duration-300 text-sm font-medium tracking-wider uppercase;
+    }
+
+    /* Footer Link */
+    .footer-link {
+        @apply text-white/60 hover:text-golden transition-colors text-sm flex items-center gap-2 group;
+    }
+}
+
+/* Custom Utility Classes */
+@layer utilities {
+
+    /* Text Gradients */
+    .text-gradient-golden {
+        @apply bg-gradient-to-r from-golden to-[#d4c59f] bg-clip-text text-transparent;
+    }
+
+    /* Backdrop Filters */
+    .backdrop-golden {
+        backdrop-filter: blur(20px);
+        background-color: rgba(205, 184, 133, 0.1);
+    }
+
+    /* Custom Borders */
+    .border-gradient {
+        border-image: linear-gradient(to right, transparent, #CDB885, transparent) 1;
+    }
+
+    /* Animation Delays */
+    .animation-delay-200 {
+        animation-delay: 200ms;
+    }
+
+    .animation-delay-400 {
+        animation-delay: 400ms;
+    }
+
+    .animation-delay-600 {
+        animation-delay: 600ms;
+    }
+
+    /* Grayscale Hover */
+    .grayscale-hover {
+        @apply grayscale transition-all duration-700;
+    }
+
+    .grayscale-hover:hover {
+        @apply grayscale-0 scale-110;
+    }
+}
+
+/* Custom Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animation Classes */
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-fade-in-down {
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+.animate-slide-in-left {
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.animate-slide-in-right {
+    animation: slideInRight 0.8s ease-out;
+}
+
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+}
+
+/* Alpine.js Cloak */
+[x-cloak] {
+    display: none !important;
+}
+
+/* Loading States */
+.skeleton {
+    @apply animate-pulse bg-gray-700/50 rounded;
+}
+
+/* Image Overlay */
+.image-overlay {
+    @apply absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center;
+}
+
+/* Decorative Elements */
+.decorative-line {
+    @apply h-px bg-gradient-to-r from-transparent via-golden to-transparent;
+}
+
+.decorative-circle {
+    @apply w-64 h-64 bg-golden/5 rounded-full blur-3xl;
+}
+
+/* Print Styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+}
+
+/* Dark Mode Support (Optional) */
+@media (prefers-color-scheme: dark) {
+    /* Already dark by default, but can add overrides here */
+}
+
+/* Responsive Typography */
+@media (max-width: 640px) {
+    .section-title {
+        @apply text-3xl;
+    }
+}
+
+/* Accessibility */
+.focus-visible:focus {
+    @apply outline-none ring-2 ring-golden ring-offset-2 ring-offset-black;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .golden-text {
+        @apply text-yellow-400;
+    }
+
+    .golden-bg {
+        @apply bg-yellow-400;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

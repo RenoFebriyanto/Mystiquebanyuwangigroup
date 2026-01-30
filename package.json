@@ -1,0 +1,27 @@
+{
+    "name": "red-island-tourism",
+    "version": "1.0.0",
+    "description": "Red Island Tourism - Luxury Coastal Experience Website",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite --config vite/vite.config.js",
+        "build": "vite build --config vite/vite.config.js",
+        "watch": "vite build --watch --config vite/vite.config.js"
+    },
+    "devDependencies": {
+        "@tailwindcss/forms": "^0.5.7",
+        "@tailwindcss/typography": "^0.5.10",
+        "alpinejs": "^3.13.3",
+        "autoprefixer": "^10.4.23",
+        "axios": "^1.6.2",
+        "laravel-vite-plugin": "^1.0.0",
+        "postcss": "^8.5.6",
+        "tailwindcss": "^3.4.19",
+        "vite": "^5.0.8"
+    },
+    "dependencies": {
+        "@fontsource/inter": "^5.0.16",
+        "@fontsource/playfair-display": "^5.0.21"
+    }
+}
