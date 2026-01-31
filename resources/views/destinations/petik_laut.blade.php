@@ -9,8 +9,7 @@
         <div class="relative group">
             <div class="aspect-[4/5] overflow-hidden rounded-sm relative z-10">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-20"></div>
-                <img src="https://images.unsplash.com/photo-1596395358245-c8c2276c117e?q=80&w=1887&auto=format&fit=crop"
-                    alt="Petik Laut Ceremony"
+                <img src="{{ asset('images/petik_laut_new.jpg') }}" alt="Petik Laut Ceremony"
                     class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 brightness-90">
             </div>
 

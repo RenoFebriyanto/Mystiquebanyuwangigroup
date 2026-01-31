@@ -38,80 +38,70 @@
 
                 <!-- 16:9 Large Item (Span 2 cols, 1 row) -->
                 <div class="col-span-2 md:col-span-2 row-span-2 relative group overflow-hidden rounded-sm">
-                    <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=2070&auto=format&fit=crop"
-                        alt="Scenic Landscape"
+                    <img src="{{ asset('images/gallery_fish_1.jpg') }}" alt="Fish Market Activity"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
                 </div>
 
                 <!-- 4:5 Portrait Item (Span 1 col, 2 rows) -->
                 <div class="col-span-1 md:col-span-1 row-span-2 relative group overflow-hidden rounded-sm">
-                    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=2070&auto=format&fit=crop"
-                        alt="Resort Detail"
+                    <img src="{{ asset('images/gallery_fish_2.jpg') }}" alt="Fresh Catch"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
                 </div>
 
                 <!-- 1:1 Square Item -->
                 <div class="col-span-1 md:col-span-1 row-span-1 relative group overflow-hidden rounded-sm">
-                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop"
-                        alt="Interior"
+                    <img src="{{ asset('images/gallery_fish_3.jpg') }}" alt="Fishermen"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
                 </div>
 
                 <!-- 1:1 Square Item -->
                 <div class="col-span-1 md:col-span-1 row-span-1 relative group overflow-hidden rounded-sm">
-                    <img src="https://images.unsplash.com/photo-1596401057633-565652f50bd6?q=80&w=2070&auto=format&fit=crop"
-                        alt="Interior"
+                    <img src="{{ asset('images/gallery_fish_4.jpg') }}" alt="Boat Unloading"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
                 </div>
 
                 <!-- 9:16 Tall Item (Span 1 col, 2 rows) -->
                 <div class="col-span-1 md:col-span-1 row-span-2 relative group overflow-hidden rounded-sm">
-                    <img src="https://images.unsplash.com/photo-1519451241324-20b4ea2c4220?q=80&w=2070&auto=format&fit=crop"
-                        alt="Tall Shot"
+                    <img src="{{ asset('images/gallery_fish_5.jpg') }}" alt="Market Scene"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
                 </div>
 
                 <!-- 16:9 Wide Item -->
                 <div class="col-span-2 md:col-span-2 row-span-1 relative group overflow-hidden rounded-sm">
-                    <img src="https://images.unsplash.com/photo-1596395358245-c8c2276c117e?q=80&w=1887&auto=format&fit=crop"
-                        alt="Wide Shot"
+                    <img src="{{ asset('images/gallery_fish_6.jpg') }}" alt="Wide Shot"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
                 </div>
 
                 <!-- 1:1 Square Item -->
                 <div class="col-span-1 md:col-span-1 row-span-1 relative group overflow-hidden rounded-sm">
-                    <img src="https://images.unsplash.com/photo-1518182170546-0766ac5f0535?q=80&w=2062&auto=format&fit=crop"
-                        alt="Detail"
+                    <img src="{{ asset('images/gallery_fish_7.jpg') }}" alt="Detail"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
                 </div>
 
                 <!-- 16:9 Wide Large Item -->
                 <div class="col-span-2 md:col-span-2 row-span-2 relative group overflow-hidden rounded-sm">
-                    <img src="https://plus.unsplash.com/premium_photo-1661964149725-fbf14e153b49?q=80&w=2070&auto=format&fit=crop"
-                        alt="Wide Large"
+                    <img src="{{ asset('images/gallery_fish_8.jpg') }}" alt="Wide Large"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
                 </div>
 
                 <!-- 1:1 Square Item -->
                 <div class="col-span-1 md:col-span-1 row-span-1 relative group overflow-hidden rounded-sm">
-                    <img src="https://images.unsplash.com/photo-1602002418816-dc024754d929?q=80&w=2070&auto=format&fit=crop"
-                        alt="Square"
+                    <img src="{{ asset('images/gallery_fish_9.jpg') }}" alt="Square"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
                 </div>
 
                 <!-- 4:5 Portrait Item -->
                 <div class="col-span-1 md:col-span-1 row-span-2 relative group overflow-hidden rounded-sm">
-                    <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2070&auto=format&fit=crop"
-                        alt="Portrait"
+                    <img src="{{ asset('images/gallery_fish_10.jpg') }}" alt="Portrait"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
                 </div>

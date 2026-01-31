@@ -54,7 +54,8 @@
         </div>
 
         <!-- Right: Booking -->
-        <a href="#booking"
+        <!-- Right: Booking -->
+        <button @click="$dispatch('open-booking-modal')"
             class="flex justify-end items-center gap-3 group hover:text-[#CDB885] transition-colors duration-300 w-24">
             <span class="uppercase tracking-widest text-xs font-medium hidden sm:block">Booking</span>
             <div class="relative">
@@ -66,7 +67,7 @@
                 <span
                     class="absolute -top-1 -right-1 w-2 h-2 bg-[#CDB885] rounded-full animate-pulse hidden group-hover:block"></span>
             </div>
-        </a>
+        </button>
     </div>
 
     <!-- Bottom Row (Navigation Links) - Desktop Only -->
@@ -150,6 +151,12 @@
                     <span
                         class="absolute -bottom-2 left-1/2 w-0 h-px bg-[#CDB885] transition-all duration-300 group-hover:w-full group-hover:left-0 opacity-0 group-hover:opacity-100"></span>
                 </a></li>
+            <li><a href="{{ route('transportation') }}"
+                    class="nav-link text-xs font-semibold uppercase tracking-[0.2em] text-white/90 hover:text-[#CDB885] transition-all duration-300 relative group">
+                    Transportation
+                    <span
+                        class="absolute -bottom-2 left-1/2 w-0 h-px bg-[#CDB885] transition-all duration-300 group-hover:w-full group-hover:left-0 opacity-0 group-hover:opacity-100"></span>
+                </a></li>
             <li><a href="#contact"
                     class="nav-link text-xs font-semibold uppercase tracking-[0.2em] text-white/90 hover:text-[#CDB885] transition-all duration-300 relative group">
                     Contact
@@ -159,65 +166,108 @@
         </ul>
     </div>
 
-    <!-- Mobile Menu Overlay -->
-    <div x-show="mobileMenuOpen" x-transition:enter="transition cubic-bezier(0.16, 1, 0.3, 1) duration-700"
-        x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
-        x-transition:leave="transition cubic-bezier(0.16, 1, 0.3, 1) duration-500"
-        x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
-        class="fixed inset-0 bg-[#0B0D12] z-50 flex flex-col justify-center items-center text-center p-6"
-        style="display: none;">
+    <!-- Mobile Menu Sidebar (Off-Canvas) -->
+    <div x-show="mobileMenuOpen" class="relative z-[60]" aria-labelledby="slide-over-title" role="dialog"
+        aria-modal="true" style="display: none;">
 
-        <!-- Close Button -->
-        <button @click="mobileMenuOpen = false"
-            class="absolute top-8 left-8 text-white/40 hover:text-[#CDB885] transition-colors duration-300 group">
-            <svg class="w-8 h-8 transform group-hover:rotate-90 transition-transform duration-500" fill="none"
-                stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12">
-                </path>
-            </svg>
-        </button>
+        <!-- Backdrop -->
+        <div x-show="mobileMenuOpen" x-transition:enter="ease-in-out duration-500"
+            x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+            x-transition:leave="ease-in-out duration-500" x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0" class="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
+            @click="mobileMenuOpen = false"></div>
 
-        <div class="mb-12">
-            <img src="{{ asset('images/mystique_logo_gold.png') }}" class="w-24 h-auto object-contain mx-auto"
-                alt="Logo">
-        </div>
+        <div class="fixed inset-0 overflow-hidden">
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="pointer-events-none fixed inset-y-0 left-0 flex max-w-full pr-10">
+                    <!-- Left Side Drawer -->
 
-        <div class="space-y-6 flex flex-col items-center">
-            <a href="{{ route('home') }}"
-                class="text-3xl font-serif italic text-white hover:text-[#CDB885] transition-colors duration-300">Home</a>
-            <a href="{{ route('about') }}"
-                class="text-3xl font-serif italic text-white hover:text-[#CDB885] transition-colors duration-300">About</a>
+                    <!-- Sidebar Panel -->
+                    <div x-show="mobileMenuOpen"
+                        x-transition:enter="transform transition ease-in-out duration-500 sm:duration-700"
+                        x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0"
+                        x-transition:leave="transform transition ease-in-out duration-500 sm:duration-700"
+                        x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full"
+                        class="pointer-events-auto w-screen max-w-xs ring-1 ring-white/10">
 
-            <div x-data="{ expanded: false }" class="flex flex-col items-center space-y-4">
-                <button @click="expanded = !expanded"
-                    class="text-3xl font-serif italic text-white hover:text-[#CDB885] transition-colors duration-300 flex items-center gap-2">
-                    Destination
-                    <svg class="w-5 h-5 transition-transform duration-300" :class="expanded ? 'rotate-180' : ''"
-                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                        </path>
-                    </svg>
-                </button>
-                <div x-show="expanded" x-collapse
-                    class="flex flex-col items-center space-y-3 bg-white/5 w-full py-4 rounded-lg">
-                    <a href="{{ route('destinations') }}"
-                        class="text-lg font-serif text-white/80 hover:text-[#CDB885]">Explore All</a>
-                    <a href="{{ route('home') }}#destinations" @click="mobileMenuOpen = false"
-                        class="text-lg font-serif text-white/80 hover:text-[#CDB885]">Highlights</a>
+                        <div class="flex h-full flex-col overflow-y-scroll bg-[#0B0D12] shadow-2xl py-6 pb-6">
+
+                            <!-- Header (Logo & Close) -->
+                            <div class="px-6 flex items-center justify-between mb-8">
+                                <img src="{{ asset('images/mystique_logo_gold.png') }}"
+                                    class="w-12 h-auto object-contain" alt="Logo">
+
+                                <button @click="mobileMenuOpen = false"
+                                    class="text-white/40 hover:text-[#CDB885] transition-colors p-2">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                            d="M6 18L18 6M6 6l12 12"></path>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <!-- Menu Items -->
+                            <div class="px-6 space-y-1">
+                                <a href="{{ route('home') }}"
+                                    class="block text-xl font-serif text-white hover:text-[#CDB885] transition-colors py-3 border-b border-white/5">Home</a>
+                                <a href="{{ route('about') }}"
+                                    class="block text-xl font-serif text-white hover:text-[#CDB885] transition-colors py-3 border-b border-white/5">About</a>
+
+                                <!-- Destination Dropdown (Simplified) -->
+                                <div x-data="{ expanded: false }" class="border-b border-white/5">
+                                    <button @click="expanded = !expanded"
+                                        class="w-full flex items-center justify-between text-xl font-serif text-white hover:text-[#CDB885] transition-colors py-3">
+                                        <span>Destination</span>
+                                        <svg class="w-5 h-5 transition-transform duration-300"
+                                            :class="expanded ? 'rotate-180' : ''" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                    <div x-show="expanded" x-collapse class="pl-4 pb-4 space-y-3 mt-1">
+                                        <a href="{{ route('destinations') }}"
+                                            class="block text-xs uppercase tracking-widest text-white/60 hover:text-[#CDB885] flex items-center gap-2">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-[#CDB885]/50"></span> Overview
+                                        </a>
+                                        <a href="{{ route('destinations') }}#ritual"
+                                            class="block text-xs uppercase tracking-widest text-white/60 hover:text-[#CDB885] flex items-center gap-2">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-[#CDB885]/50"></span> Petik Laut
+                                        </a>
+                                        <a href="#pulau-merah"
+                                            class="block text-xs uppercase tracking-widest text-white/60 hover:text-[#CDB885] flex items-center gap-2">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-[#CDB885]/50"></span> Pulau Merah
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <a href="{{ route('services') }}"
+                                    class="block text-xl font-serif text-white hover:text-[#CDB885] transition-colors py-3 border-b border-white/5">Service</a>
+                                <a href="{{ route('gallery') }}"
+                                    class="block text-xl font-serif text-white hover:text-[#CDB885] transition-colors py-3 border-b border-white/5">Gallery</a>
+                                <a href="{{ route('transportation') }}"
+                                    class="block text-xl font-serif text-white hover:text-[#CDB885] transition-colors py-3 border-b border-white/5">Transportation</a>
+                                <a href="#contact"
+                                    class="block text-xl font-serif text-white hover:text-[#CDB885] transition-colors py-3 border-b border-white/5">Contact</a>
+                            </div>
+
+                            <!-- Footer Info -->
+                            <div class="mt-auto px-6 pt-10">
+                                <p class="text-[0.6rem] uppercase tracking-[0.2em] text-[#CDB885] mb-2 opacity-80">
+                                    Reservations</p>
+                                <p class="text-white/60 text-sm font-light mb-6 font-mono">+62 812 3456 7890
+                                </p>
+
+                                <p class="text-[0.6rem] uppercase tracking-[0.2em] text-[#CDB885] mb-2 opacity-80">
+                                    Location</p>
+                                <p class="text-white/60 text-sm font-light leading-relaxed">Banyuwangi, East
+                                    Java<br>Indonesia</p>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <a href="{{ route('services') }}" @click="mobileMenuOpen = false"
-                class="text-3xl font-serif italic text-white hover:text-[#CDB885] transition-colors duration-300">Service</a>
-            <a href="{{ route('gallery') }}" @click="mobileMenuOpen = false"
-                class="text-3xl font-serif italic text-white hover:text-[#CDB885] transition-colors duration-300">Gallery</a>
-            <a href="#contact" @click="mobileMenuOpen = false"
-                class="text-3xl font-serif italic text-white hover:text-[#CDB885] transition-colors duration-300">Contact</a>
-        </div>
-
-        <div class="mt-12 flex flex-col items-center gap-4">
-            <div class="w-12 h-px bg-[#CDB885]/30"></div>
-            <p class="text-[0.6rem] tracking-[0.3em] uppercase text-white/40">Banyuwangi, East Java</p>
         </div>
     </div>
 </nav>

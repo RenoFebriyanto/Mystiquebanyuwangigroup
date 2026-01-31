@@ -29,11 +29,9 @@
                 <div class="aspect-[4/5] bg-[#1E232B] overflow-hidden relative border border-white/5">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#1a1a2e] via-transparent to-transparent z-10">
                     </div>
-                    <div class="w-full h-full flex items-center justify-center text-[#D4B996]/20 bg-[#1E232B]">
-                        <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5"
-                                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                        </svg>
+                    <div class="w-full h-full relative">
+                        <img src="{{ asset('images/team_yulli.jpg') }}" alt="Yulli Criestiani"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale group-hover:grayscale-0">
                     </div>
                     <div
                         class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 flex items-center justify-center p-8 text-center">
@@ -59,11 +57,9 @@
                 <div class="aspect-[4/5] bg-[#1E232B] overflow-hidden relative border border-white/5">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#1a1a2e] via-transparent to-transparent z-10">
                     </div>
-                    <div class="w-full h-full flex items-center justify-center text-[#D4B996]/20 bg-[#1E232B]">
-                        <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5"
-                                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                        </svg>
+                    <div class="w-full h-full relative">
+                        <img src="{{ asset('images/team_budi.jpg') }}" alt="Mr. Budi Wahyono"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale group-hover:grayscale-0">
                     </div>
                     <div
                         class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 flex items-center justify-center p-8 text-center">
@@ -89,11 +85,9 @@
                 <div class="aspect-[4/5] bg-[#1E232B] overflow-hidden relative border border-white/5">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#1a1a2e] via-transparent to-transparent z-10">
                     </div>
-                    <div class="w-full h-full flex items-center justify-center text-[#D4B996]/20 bg-[#1E232B]">
-                        <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.5"
-                                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                        </svg>
+                    <div class="w-full h-full relative">
+                        <img src="{{ asset('images/team_dessy.jpg') }}" alt="Ms. Dessy Lecky"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale group-hover:grayscale-0">
                     </div>
                     <div
                         class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 flex items-center justify-center p-8 text-center">

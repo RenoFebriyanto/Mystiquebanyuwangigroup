@@ -1,8 +1,8 @@
 <section class="py-20 bg-[#0B0D12] border-t border-[#CDB885]/10">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-12">
-            <span class="text-[#CDB885] uppercase tracking-[0.3em] text-xs font-bold">Strategic Partnerships</span>
-            <h2 class="text-3xl md:text-4xl font-serif text-white mt-3">Our Valued Clients</h2>
+            <h2 class="text-3xl md:text-4xl font-serif text-white mt-3">Our Banyuwangi</h2>
+            <span class="text-[#CDB885] uppercase tracking-[0.3em] text-xs font-bold">South Coast Project</span>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-12 items-center justify-center">

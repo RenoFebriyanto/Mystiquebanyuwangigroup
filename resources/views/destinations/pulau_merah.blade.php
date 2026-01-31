@@ -41,8 +41,7 @@
             <div class="order-1 lg:order-2 relative group">
                 <div class="aspect-[4/3] overflow-hidden rounded-sm relative z-10">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-20"></div>
-                    <img src="https://images.unsplash.com/photo-1518182170546-0766ac5f0535?q=80&w=2062&auto=format&fit=crop"
-                        alt="Pulau Merah Coast"
+                    <img src="{{ asset('images/red_island_main.jpg') }}" alt="Pulau Merah Coast"
                         class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
                 </div>
                 <!-- Decorative Frame -->
